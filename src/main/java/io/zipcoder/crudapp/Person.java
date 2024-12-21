@@ -3,12 +3,12 @@ package io.zipcoder.crudapp;
 public class Person {
     private String firstName;
     private String lastName;
-    private int id;
+    private Integer id;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, int id) {
+    public Person(String firstName, String lastName, Integer id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
@@ -30,11 +30,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }
