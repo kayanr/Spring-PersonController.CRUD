@@ -24,7 +24,7 @@ public class PersonController {
     }
 
     @GetMapping("/{id}")
-    public Person getPerson(@PathVariable int id){
+    public Person getPerson(@PathVariable Integer id){
        return personList.stream().filter(person -> person.getId() == id).findFirst().orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class PersonController {
     }
 
     @PutMapping("/{id}")
-    public Person updatePerson(@PathVariable int id, @RequestBody Person p){
+    public Person updatePerson(@PathVariable Integer id, @RequestBody Person p){
         Person person = getPerson(id);
         if(person != null){
             person.setFirstName((p.getFirstName()));
@@ -43,11 +43,11 @@ public class PersonController {
             p.setId(id);
             personList.add(p);
         }
-        return p;
+        return person;
     }
 
     @DeleteMapping("/{id}")
-    public void deletePerson(@PathVariable int id){
+    public void DeletePerson(@PathVariable Integer id){
         personList.removeIf(person -> person.getId() == id);
 
     }
